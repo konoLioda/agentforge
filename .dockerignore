@@ -1,0 +1,25 @@
+# 版本控制与虚拟环境
+.git/
+.gitignore
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# 密钥与运行时数据
+.env
+.env.*.local
+data/
+logs/
+*.log
+
+# 测试与缓存
+.pytest_cache/
+.coverage
+htmlcov/
+tests/
+
+# IDE
+.idea/
+.vscode/

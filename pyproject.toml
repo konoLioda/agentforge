@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentforge"
+version = "1.0.0"
+description = "AgentForge：基于 LangChain + LangGraph 的多智能体协作框架（ReAct 推理 + Planner-Worker-Reviewer 工作流）"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Lio", email = "1785653610@qq.com"}
+]
+keywords = ["ai", "agent", "langchain", "langgraph", "llm", "multi-agent", "react"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "langgraph>=0.2.0",
+    "langchain>=0.3.0",
+    "langchain-core>=0.3.0",
+    "langchain-community>=0.3.0",
+    "fastapi>=0.110.0",
+    "uvicorn>=0.27.0",
+    "streamlit>=1.32.0",
+    "chromadb>=0.4.0",
+    "zhipuai>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "httpx>=0.27.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/konoLioda/agentforge"
+Documentation = "https://github.com/konoLioda/agentforge#readme"
+Repository = "https://github.com/konoLioda/agentforge"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agentforge*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

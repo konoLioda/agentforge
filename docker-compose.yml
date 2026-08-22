@@ -1,0 +1,26 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - ZHIPU_API_KEY=${ZHIPU_API_KEY:-}
+      - ZHIPU_MODEL=${ZHIPU_MODEL:-glm-4}
+      - SEARCH_API_KEY=${SEARCH_API_KEY:-}
+      - VECTOR_DB_PATH=${VECTOR_DB_PATH:-./data/chroma_db}
+    volumes:
+      - ./data:/app/data
+    command: python -m uvicorn agentforge.api.routes:app --host 0.0.0.0 --port 8000
+
+  ui:
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      - ZHIPU_API_KEY=${ZHIPU_API_KEY:-}
+      - ZHIPU_MODEL=${ZHIPU_MODEL:-glm-4}
+      - SEARCH_API_KEY=${SEARCH_API_KEY:-}
+      - VECTOR_DB_PATH=${VECTOR_DB_PATH:-./data/chroma_db}
+    volumes:
+      - ./data:/app/data
+    command: streamlit run agentforge/ui/streamlit_app.py --server.port 8501 --server.address 0.0.0.0
