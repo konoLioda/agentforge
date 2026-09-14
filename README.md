@@ -64,7 +64,7 @@ AgentForge/
 │   └── __init__.py
 ├── config/                     # 配置与日志
 ├── tests/                      # 单元测试（38 个）
-├── docs/                       # 架构文档与面试准备
+├── docs/                       # 架构文档
 ├── Dockerfile
 ├── docker-compose.yml
 ├── pyproject.toml
